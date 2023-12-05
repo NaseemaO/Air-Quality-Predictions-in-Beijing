@@ -7,6 +7,9 @@ Objectives:
 Pediction models / Train algorithm(s) to classify air quality feature(s) / measurements and predict the level of O3, the Target. 
 Build additional models to predict other Targets for eg. CO
 
+project plan
+
+
 Model Optimizations.  
 
 Instructions / Check list
