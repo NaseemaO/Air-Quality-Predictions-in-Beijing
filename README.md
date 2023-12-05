@@ -1,4 +1,4 @@
-# Final-Project-4 Group-6. 
+# Final-Project-4 Group-6. DRAFT/ NOTES
 Air Quality Predictions in Beijing, China
 
 Project Team: Alex Calametti, Brian Guenther, Gabriela Delgado, Naseema Omer 
