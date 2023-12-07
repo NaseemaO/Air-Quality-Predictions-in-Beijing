@@ -16,14 +16,19 @@ Build additional models to predict other Targets for eg. CO
 ## Next Steps
 
 # Technical Details
-## Process Extraction, Transformation, and Loading
-Data Selection https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data
-Download csv files. (in Resource folder)
+## Process 
+Extraction, Transformation, and Loading (Backend ETL)
 
-Import into Panda Data Frames, concatenate the Pandas DataFrames, remove or impute Null rows (if between 5-10% of the total # or rows)
+Data Selection:  https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data
+12 files, one for each station downloaded in .csv format and placed in the Resources folder
+
+Data Cleansing: Import into Panda Data Frames, concatenate the Pandas DataFrames, remove or impute Null rows (if between 5-10% of the total # or rows)
 May as example: Export as Parquet file, then use Spark. 
 
-## Import dependencies, libraries, and modules
+Cleaned Data Files: Two cleaned.csv files placed in AWS S3Bucket:
+1. Data drop S3 bucket: https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_drop.csv
+
+2. Data_med S3 bucket: https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_med.csv
 
 
 ## Programs 
