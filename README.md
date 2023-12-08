@@ -7,11 +7,7 @@ Project Team: Alex Calametti, Brian Guenther, Gabriela Delgado, Naseema Omer
 Pediction models / Train algorithm(s) using Supervised Machine Learning to classify air quality feature(s) / measurements and predict the target variable for example Ozone (O3). 
 Build additional models to predict other Targets for eg. CO
 
-# Analysis
-
-# Summary 
-
-## Next Steps / Recommendations
+# Summary /Next Steps / Recommendations
 
 # Technical Details
 ## Extraction, Transformation, and Loading (Backend ETL)
@@ -64,7 +60,8 @@ Spark
 AWS S3 Bucket
 Prediction Models: Supervised Machine Learning: Linear Regression, Decision Trees, Neural Networks.  
 
-## Supervised Machine Learning Methods.
+## Analysis
+### Supervised Machine Learning Methods.
 ### Linear Regression Predictions Models performed with Single Feature, and Multiple Features.
 
 Explored data by performing Linear Regression Prediction Models with Single Features using 2 different cleansed datasets: 
@@ -126,11 +123,11 @@ Coefficients array:  [ 1.57294634e-01  3.93318439e-02  2.84525105e-01 -7.9744202
   1.33234639e-03  4.33588565e+00  1.31796078e-01 -1.58767871e+00
   8.68608179e-01  2.29319850e+00]
 
-## Decision Trees
+### Decision Trees
 
 
 
-## Neural Networks
+### Neural Networks
 
 
 ## Tableau 
