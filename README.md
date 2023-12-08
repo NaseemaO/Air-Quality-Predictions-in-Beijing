@@ -76,6 +76,12 @@ With SciKit-learn, Manual Predictions, Predict Function
 I need to put a chart together and have an image of it in here for the Single, and Multi Regressions so its not so wordy and long here. 
 And a chart with the Evaluations for both
 
+Sample of data values with dropped date/time and wd columns
+
+
+<img src="Images\LR_sample_data.PNG" alt="Predict Function" width="600" height="350">
+
+
 Independent Single Variable: TEMP (Temperature)  
 Target Feature: O3 (Ozone)
 Linear Regression
