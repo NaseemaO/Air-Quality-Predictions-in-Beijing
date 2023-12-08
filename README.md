@@ -112,7 +112,7 @@ mean_absolute_error :  27.07180456217113
 mean_squared_error :  370530.05017968314
 mean_absolute_error :  376.8932019597799
 
-Visualized relationships between features using pair plots  
+Visualized relationships between features using pair plots
 
 <img src="Images\LR_relationship_features.PNG" alt="Relationship Between Features" width="800" height="800">
 
