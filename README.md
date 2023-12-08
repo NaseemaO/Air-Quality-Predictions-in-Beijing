@@ -62,9 +62,9 @@ Prediction Models: Supervised Machine Learning: Linear Regression, Decision Tree
 
 ## Analysis
 ### Supervised Machine Learning Methods.
-### Linear Regression Predictions Models performed with Single Feature, and Multiple Features.
+### Linear Regression Models performed with Single Feature, and Multiple Features.
 
-Explored data by performing Linear Regression Prediction Models with Single Features using 2 different cleansed datasets: 
+Data Exploration by performing Linear Regression Prediction Models with Single Features using 2 different cleansed datasets: 
 1. Without Zero or Null Values
 2. With Zero Values replaced with Median Values of their respective columns
 Conclusion
@@ -101,6 +101,7 @@ The standard deviation is 56.70893843043617.
 I will run it with another feature CO.  Yet to-do. 
 
 #### Multiple Variables Linear Regression Predictions: 
+Data exploration for predictions with different Target Features
 1. Target Feature: O3 
 mean_squared_error :  1378.584450481671
 mean_absolute_error :  27.07180456217113
