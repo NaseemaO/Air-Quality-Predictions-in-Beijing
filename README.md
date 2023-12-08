@@ -4,20 +4,19 @@ Air Quality Predictions in Beijing, China
 Project Team: Alex Calametti, Brian Guenther, Gabriela Delgado, Naseema Omer 
 
 # Objectives: 
-Pediction models / Train algorithm(s) to classify air quality feature(s) / measurements and predict the level of O3, the Target. 
+Pediction models / Train algorithm(s) using Supervised Machine Learning to classify air quality feature(s) / measurements and predict the target variable for example Ozone (O3). 
 Build additional models to predict other Targets for eg. CO
 
 # Analysis
 
-# Results
-
 # Summary 
 
-## Next Steps
+## Next Steps / Recommendations
 
 # Technical Details
 ## Extraction, Transformation, and Loading (Backend ETL)
 
+### Extraction
 Data Selection:  https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data
 12 files, one for each station downloaded in .csv format and placed in the Resources folder
 
@@ -41,6 +40,7 @@ wd: wind direction
 WSPM: wind speed (m/s)
 station: name of the air-quality monitoring site
 
+### Transformation 
 Data Cleansing: 
 Import into Panda Data Frames, concatenate the Pandas DataFrames, remove or impute Null rows (if between 5-10% of the total # or rows). May for example export as Parquet file, then use Spark. 
 
@@ -51,6 +51,9 @@ Cleaned Data Files: Two cleaned.csv files placed in AWS S3Bucket:
 
 2. Data_med S3 bucket: https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_med.csv
 
+### Loading 
+Cleaned data files stored in AWS S3 Bucket
+Read and Loaded in the various code programs for predictions and analysis 
 
 ## Programs 
 Python, Pandas 
@@ -58,10 +61,7 @@ Machine Learning
 Scikit-learn
 Spark 
 AWS S3 Bucket
-Supervised Machine Learning: Linear Regression, Decision Trees, Neural Networks.  
-
-# Acknowledgements: 
-Instructor: Hunter Hollis, TAs: Sam Espe and Randy Sendek, and Tutors for their guidance on this project.
+Prediction Models: Supervised Machine Learning: Linear Regression, Decision Trees, Neural Networks.  
 
 ## Process 
 ### Linear Regression & Predictions using a single feature to predict the O3. Supervised Machine Learning Methods.
@@ -72,3 +72,16 @@ Conclusion
 * Decided to go with the Dataset 1 with data_drop.  
 * Dataset 2 with the Zero values replaced with Median value of the respective column adds a lot of bias to the result.
 
+## Linear Regression & Predictions using Multiple Variables
+
+
+
+## Decision Trees
+
+
+
+## Neural Networks
+
+
+# Acknowledgements: 
+Instructor: Hunter Hollis, TAs: Sam Espe and Randy Sendek, and Tutors for their guidance on this project.
