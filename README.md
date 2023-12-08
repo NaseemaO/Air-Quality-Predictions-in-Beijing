@@ -88,7 +88,7 @@ Model's formula: y = 17.31191562019925 + 2.963656055355665 * 100
 Predicted Ozone (O3) metrics 313.68
 
 Predict Function
-<Img src="images\LR_PredictFunction_O3.PNG" alt="Predict Function" width="200" height="150">
+<img src="Images\LR_PredictFunction_O3.PNG" alt="Predict Function" width="200" height="150">
 
 Assessing the Model
 The score is 0.3565257008834236.
