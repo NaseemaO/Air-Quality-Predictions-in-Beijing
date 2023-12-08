@@ -88,7 +88,7 @@ Model's formula: y = 17.31191562019925 + 2.963656055355665 * 100
 Predicted Ozone (O3) metrics 313.68
 
 Predict Function
-<img src="images\LR_PredictFunction_O3.PNG" alt="Predict Function" width="200" height="150">
+<Img src="images\LR_PredictFunction_O3.PNG" alt="Predict Function" width="200" height="150">
 
 Assessing the Model
 The score is 0.3565257008834236.
@@ -112,12 +112,12 @@ mean_absolute_error :  376.8932019597799
 
 Visualized relationships between features using pair plots  
 
-<img src="images\LR_relationship_features.PNG" alt="Relationship between Features" width="800" height="800">
+<img src="Images\LR_relationship_features.PNG" alt="Relationship between Features" width="800" height="800">
 
 
 Visualized multicollinearity between independent features using a heatmap for Dependent Feature: O3
 
-<img src="images\LR_Heatmap_PearsonCorrCoefMatrix.PNG" alt="Multicollinearity between indepent Features" width="800" height="400">
+<img src="Images\LR_Heatmap_PearsonCorrCoefMatrix.PNG" alt="Multicollinearity between indepent Features" width="800" height="400">
 
 Intercept:  -117.03237018427141
 Coefficients array:  [ 1.57294634e-01  3.93318439e-02  2.84525105e-01 -7.97442020e-01
