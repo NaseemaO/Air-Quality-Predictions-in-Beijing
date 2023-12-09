@@ -119,10 +119,14 @@ mean_squared_error :  370530.05017968314
 mean_absolute_error :  376.8932019597799
 
 Visualized relationships between features using pair plots
+
+
 <img src="Images\LR_relationship_features.PNG" alt="Relationship Between Features" width="800" height="800">
 
 
 Visualized multicollinearity between independent features using a heatmap for Dependent Feature: O3
+
+
 <img src="Images\LR_Heatmap_PearsonCorrCoefMatrix.PNG" alt="Multicollinearity Between Independent Features" width="800" height="400">
 
 Intercept:  -117.03237018427141
