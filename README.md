@@ -4,7 +4,7 @@ Air Quality Predictions in Beijing, China
 Project Team: Alex Calametti, Brian Guenther, Gabriela Delgado, Naseema Omer 
 
 # Objectives: 
-Pediction models / Train algorithm(s) using Supervised Machine Learning to classify air quality feature(s) / measurements and predict the target variable for example Ozone (O3). 
+Prediction models / Train algorithm(s) using Supervised Machine Learning to classify air quality feature(s) / measurements and predict the target variable for example Ozone (O3). 
 Build additional models to predict other Targets for eg. CO
 
 # Summary /Next Steps / Recommendations
