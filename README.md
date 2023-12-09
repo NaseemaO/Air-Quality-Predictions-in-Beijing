@@ -10,7 +10,7 @@ Build additional models to predict other Targets for eg. CO
 # Summary /Next Steps / Recommendations
 
 # Technical Details
-## Extraction, Transformation, and Loading (Backend ETL)
+## Extraction, Transformation, and Loading (ETL)
 
 ### Extraction
 [Dataset Selected](https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data)
