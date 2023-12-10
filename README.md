@@ -99,23 +99,30 @@ Predict Function
 <img src="Images\LR_PredictFunction_O3.PNG" alt="Predict Function" width="200" height="150">
 
 Assessing the Model
-The score is 0.3565257008834236.
-The r2 is 0.3565257008834236.
-The mean squared error is 2069.351378037146.
-The root mean squared error is 45.490123961549564.
-The standard deviation is 56.70893843043617.
 
-2. Target Feature: CO (Carbon Monoxide)
-I will run it with another feature CO.  Yet to-do. 
+  The score is 0.3565257008834236.
+
+  The r2 is 0.3565257008834236.
+
+  The mean squared error is 2069.351378037146.
+
+  The root mean squared error is 45.490123961549564.
+
+  The standard deviation is 56.70893843043617.
+
 
 #### Multiple Variables Linear Regression Predictions: 
 Data exploration for predictions with different Target Features
 1. Target Feature: O3 
+
 mean_squared_error :  1378.584450481671
+
 mean_absolute_error :  27.07180456217113
 
 2. Target Feature: CO 
+
 mean_squared_error :  370530.05017968314
+
 mean_absolute_error :  376.8932019597799
 
 Visualized relationships between features using pair plots
@@ -143,7 +150,8 @@ Coefficients array:  [ 1.57294634e-01  3.93318439e-02  2.84525105e-01 -7.9744202
 
 
 ## Tableau 
-  link 
+  [Beijing Air Quality Data Analysis on Tableau](https://public.tableau.com/views/BeijingAirQualityDataAnalysis/Story1?:language=en-US&:display_count=n&:origin=viz_share_link)
+
   image
 
 
