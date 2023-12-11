@@ -179,7 +179,7 @@ Visualized multicollinearity between independent features using a heatmap for De
 
 ### Decision Trees
 
-
+A decision tree regressor was modeled to evaluate how well ozone (O3) can be predicted based on the other variables present in our dataset. This was done using the Sklearn library. The decision tree was run using various different variables but the model that garnered the best results predicted O3 values from the date (year, month, day, hour). The R^2 value was 0.82 which meets the project requirement of 0.80. Limitations of this model were the time series aspect of the data, as we did not have enough time in class to comduct time series analysis to further optimize the model. This can be a next step to build on what we have completed thus far. 
 
 ### Neural Networks
 With Keras, sklearn, pandas, and tensor flow
