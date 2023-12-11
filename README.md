@@ -47,7 +47,7 @@ See Technical Details below.
   A positive correlation between Temperature and O3. (This matches the findings in the exploration of data in Tableau).
   A negative correlation between Temperature and CO. (This matches the findings in the exploration of data in Tableau).
 
-  Models can be improved by a larger data set, and fewer independent variables, modifying some parameters for example Test Size. 
+  Models may be improved by getting more data / selecting a larger data set, fewer independent variables, or modifying some parameters for example Test Size.
 
 * Tableau: 
 Exploration done with, and without the additonal variable. Results are similar in both visualization sets.   
@@ -102,11 +102,11 @@ Cleaned Data Files: Two cleaned.csv files placed in AWS S3Bucket:
 
 2. [Data_med S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_med.csv)
 
-Variables removed:  'Station' and 'No' 
 3. [Data_     :](https://                 )
+Variables removed:  'Station' and 'No' 
 
-Variables removed: 'No' 
 4. [Data_Tableau.7z is in Resources Folder](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\Resources\data_tableau.7z)
+Variables removed: 'No'
 
 ### Loading 
 Cleaned data 3 files stored in AWS S3 Bucket, and zipped files placed in project Resources folder.
@@ -200,6 +200,8 @@ CO levels seem to be lower in the summer months in comparison to the colder weat
 
 
 ### Next Steps / Recommendations
+Models may be improved by getting more data / selecting a larger data set, fewer independent variables, or modifying some parameters for example Test Size.
+Trying out more different models and selecting the better / best models. 
 
 # Acknowledgements: 
 Instructor: Hunter Hollis, TAs: Sam Espe and Randy Sendek, and Tutors for their guidance on this project.
