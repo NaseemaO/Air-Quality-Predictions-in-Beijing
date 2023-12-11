@@ -13,6 +13,8 @@ Models built with Target variable O3, and CO.
 
 # Summary /Next Steps / Recommendations
 
+
+
 # Technical Details
 ## Data Selection / Background
 [Dataset Selected](https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data) from UCI (University of California, Irvine) Machine Learning Repository that allows sharing given appropriate credit. 
@@ -75,6 +77,8 @@ Scikit-learn
 Spark 
 AWS S3 Bucket
 Tableau
+Neural Networks
+Decision Trees
 
 Prediction Models: 
 Supervised Machine Learning: 
