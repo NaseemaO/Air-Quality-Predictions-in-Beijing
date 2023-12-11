@@ -13,11 +13,11 @@ Models built with Target variable O3, and CO.
 # Analysis
 
 Created and performed Prediction Models using Supervised Machine Learning: 
-Linear Regression - Single Variable with plots: Scatter, Line, Superposed. 
-Linear Regression - Multiple Variable with plots  
-Decision Trees - multiple Variables, 
-Neural Networks - 
-Data analysis and Visualization in Tableau.  
+  * Linear Regression - Single Variable with plots: Scatter, Line, Superposed. 
+  * Linear Regression - Multiple Variable with plots.  
+  * Decision Trees - multiple Variables
+  * Neural Networks - 
+  * Tableau - visualization and data analysis. 
 
 See Technical Details below. 
 
@@ -96,11 +96,14 @@ station: name of the air-quality monitoring site
 Data Cleansing: 
 Import into Panda Data Frames, concatenate the Pandas DataFrames, remove or impute Null rows (if between 5-10% of the total # or rows). May for example export as Parquet file, then use Spark. 
 
-Variables removed: 'station' 
-Cleaned Data Files: Two cleaned.csv files placed in AWS S3Bucket:
+Cleaned Data Files: [Zipped cleaned data files](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\Resources)
+Temporarily placed first three .csv files placed in AWS S3Bucket. 
+
 1. [Data_drop S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_drop.csv)
+Variables removed: 'station'
 
 2. [Data_med S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_med.csv)
+Variables removed: 'station'
 
 3. [Data_     :](https://                 )
 Variables removed:  'Station' and 'No' 
