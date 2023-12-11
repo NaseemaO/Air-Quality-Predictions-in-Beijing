@@ -10,10 +10,29 @@ Build additional models to predict other Targets.
 
 Models built with Target variable O3, and CO. 
 
+# Analysis
 
-# Summary /Next Steps / Recommendations
+Created and performed Prediction Models using Supervised Machine Learning: 
+Linear Regression - Single Variable with plots: Scatter, Line, Superposed. 
+Linear Regression - Multiple Variable with plots  
+Decision Trees - multiple Variables, 
+Neural Networks - 
+Data analysis and Visualization in Tableau.  
+
+See Technical Details below. 
 
 
+# Analysis Summary
+
+* Linear Regression Models:
+  * As the temperature rises, the Ozone measures increase. 
+  * There is a positive correlation between pollutant variables carbon monoxide, nitrogen dioxide, suplhur dioxide, PM2.5, and PM10 on Ozone levels. 
+  * There is a negative correlation between weather variables Temperature, Pressure, Dewpoint, Rain, and Windspeed on Ozone. 
+
+* Tableau: 
+  * O3 has highest levels in the summer months.  Measures start climbing in April and start to decline in Sept.    
+  * CO  starts declining in March, climbs in September. Exception year 2013 and part of  2015  drop in March and re-peak in  June, decline and re-peak in   Sept. 2015 yr continues its decline after June and follows the overall trend after.                            
+  * Temperatures in the warmer months may be a contributing feature for increaseing the O3 measures in the warmer summer months. 
 
 # Technical Details
 ## Data Selection / Background
@@ -71,86 +90,45 @@ Cleaned data 3 files stored in AWS S3 Bucket, and zipped files placed in project
 Read and Loaded appropriate cleaned data file(s) in the various code files for predictions and analysis 
 
 ## Programs 
-Python, Pandas 
+AWS S3 Bucket
+Decision Trees
+Google Colaboratory 
+Keras
 Machine Learning
+Neural Networks
+Python, Pandas 
 Scikit-learn
 Spark 
-AWS S3 Bucket
 Tableau
-Neural Networks
-Decision Trees
+Tensor Flow 
 
-Prediction Models: 
-Supervised Machine Learning: 
-Linear Regression - Single Variable, Linear Regression - Multiple Variable,  Decision Trees, Neural Networks.
-Visualization and data analysis in Tableau.  
+## Models 
+Supervised Machine Learning Methods.
 
-## Analysis
-### Supervised Machine Learning Methods.
-### Linear Regression Models performed with Single Feature, and Multiple Features.
+#### Linear Regression Models performed with Single Feature, and Multiple Features.
+Single Feature Linear Regression Prediction Models:
 
 Data Exploration by performing Linear Regression Prediction Models with Single Features using 2 different cleansed datasets: 
 1. Without Zero or Null Values
 2. With Zero Values replaced with Median Values of their respective columns
 Conclusion
 * Dataset 2 with the Zero values replaced with Median value of the respective column adds a lot of bias to the result.
-* Decided to proceed with using Dataset 1 with data_drop for the Project Analysis. 
+* Decided to proceed with using Dataset 1 with data_drop for the Project Analysi
 
-#### Single Feature Linear Regression Prediction Models 
-With SciKit-learn, Manual Predictions, Predict Function
-I need to put a chart together and have an image of it in here for the Single, and Multi Regressions so its not so wordy and long here. 
-And a chart with the Evaluations for both
+Sample of Data
 
-Sample of data values with dropped date/time and wd columns
+<img src="Images\LR_sample_data.PNG" alt="Sample of Data" width="600" height="350">
 
-
-<img src="Images\LR_sample_data.PNG" alt="Predict Function" width="600" height="350">
-
-
-Independent Single Variable: TEMP (Temperature)  
-Target Feature: O3 (Ozone)
-Linear Regression
-Model's slope: 2.96365606
-Model's y-intercept: 17.31191562019925
-Best Fit Line: Model's formula: y = 17.31191562019925 + 2.963656055355665X
-
-Manual Predictions
-Model's formula: y = 17.31191562019925 + 2.963656055355665 * 100
-Predicted Ozone (O3) metrics 313.68
-
-Predict Function
+Evaluation of the Linear Regression Models 
+* Linear Regression - Single Variable Temperature with Target Variable Ozone, reveals the Ozone rises with increase in temperatures. 
+* Linear Regression - Multiple Variables.  
+  * *  There is a positive correlation between pollutant variables carbon monoxide, nitrogen dioxide, suplhur dioxide, PM2.5, and PM10 on Ozone levels. 
+  * *  There is a negative correlation between weather variables Temperature, Pressure, Dewpoint, Rain, and Windspeed on Ozone.
+  
+<img src="Images\LR_Evaluations.PNG" alt="Assessing the Linear Regression Models" width="800" height="800">
 
 
-<img src="Images\LR_PredictFunction_O3.PNG" alt="Predict Function" width="200" height="150">
-
-Assessing the Model
-
-  The score is 0.3565257008834236.
-
-  The r2 is 0.3565257008834236.
-
-  The mean squared error is 2069.351378037146.
-
-  The root mean squared error is 45.490123961549564.
-
-  The standard deviation is 56.70893843043617.
-
-
-#### Multiple Variables Linear Regression Predictions: 
-Data exploration for predictions with different Target Features
-1. Target Feature: O3 
-
-mean_squared_error :  1378.584450481671
-
-mean_absolute_error :  27.07180456217113
-
-2. Target Feature: CO 
-
-mean_squared_error :  370530.05017968314
-
-mean_absolute_error :  376.8932019597799
-
-Visualized relationships between features using pair plots
+Relationships between features using pair plots visualized
 
 
 <img src="Images\LR_relationships_features.PNG" alt="Relationship Between Features" width="800" height="800">
@@ -159,12 +137,10 @@ Visualized relationships between features using pair plots
 Visualized multicollinearity between independent features using a heatmap for Dependent Feature: O3
 
 
-<img src="Images\LR_Multi_Heatmap_PearsonCorrCoefMatrix.PNG" alt="Multicollinearity Between Independent Features" width="800" height="400">
+<img src="Images\LR_Multi_Heatmap_PearsonCorrCoefMatrix.PNG" alt="Multicollinearity Between Independent Features" width="800" height="500">
 
-Intercept:  -117.03237018427141
-Coefficients array:  [ 1.57294634e-01  3.93318439e-02  2.84525105e-01 -7.97442020e-01
-  1.33234639e-03  4.33588565e+00  1.31796078e-01 -1.58767871e+00
-  8.68608179e-01  2.29319850e+00]
+
+
 
 ### Decision Trees
 
@@ -181,12 +157,17 @@ MAE = ~56
 
 
 ## Tableau 
-  [Beijing Air Quality Data Analysis on Tableau](https://public.tableau.com/views/BeijingAirQualityDataAnalysis/Story1?:language=en-US&:display_count=n&:origin=viz_share_link)
+  [Beijing Air Quality Data Analysis on Tableau](https://public.tableau.com/app/profile/naseema.omer/viz/BeijingAirQualityDataAnalysis/BeijingAirQualityDataAnalysis)
 
   Explored data, and analysis including 12 Stations in Tableau.
 
 <img src="Images\TableauDashboard.PNG" alt="By Month and Date 2013-2017 for O3, and CO" width="800" height="500">
 
+O3 levels are higher in the summer months.  Temperature is higher in the summer months. 
+CO levels seem to be lower in the summer months in comparison to the colder weathered months. 
+
+
+### Next Steps / Recommendations
 
 # Acknowledgements: 
 Instructor: Hunter Hollis, TAs: Sam Espe and Randy Sendek, and Tutors for their guidance on this project.
