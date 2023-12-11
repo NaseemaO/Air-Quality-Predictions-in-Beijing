@@ -26,13 +26,37 @@ See Technical Details below.
 
 * Linear Regression Models:
   * As the temperature rises, the Ozone measures increase. 
-  * There is a positive correlation between pollutant variables carbon monoxide, nitrogen dioxide, suplhur dioxide, PM2.5, and PM10 on Ozone levels. 
-  * There is a negative correlation between weather variables Temperature, Pressure, Dewpoint, Rain, and Windspeed on Ozone. 
+  Slope of 2.96 in single variable Model with Temperature, and Target Ozone (O3). 
+  r2 value of 0.356525701 indicates 35% variability of the data; 65% of data is not represented. 
+
+  * Target Ozone (O3) measure predictions multiple variables: 
+  There is a positive correlation between pollutant variables carbon monoxide, nitrogen dioxide, suplhur dioxide, PM2.5, and PM10 and O3. 
+  The r2 is 0.5724457157382516 indicates 57% variability of the data. 
+
+  * Target Carbon Monoxide (CO) measure predictions with multiple variables:
+  There is a positive correlation between pollutant variables ozone, nitrogen dioxide, suplhur dioxide, PM2.5, and PM10 and CO.
+  The r2 is 0.723158568713435 indicates 72% variability of the data. 
+
+  * Using Pair Plots to visualize Feature Relationships, it appears that there is:
+  The weather variables Temperature, Pressure, Dewpoint, Rain, and Windspeed do not have a significant impact on either O3, or CO. 
+  There is a slight correlation between Temperature and both the O3, and CO.
+  The O3 increases with temperature increase. (This matches the findings in the exploration of data in Tableau).
+  The CO decreases with temperature increase. (This matches the findings in the exploration of data in Tableau).
+
+  * Visualizing Multicollinearity with Pearson Correlation Coefficient Matrix between All Features (as Independent Features) and Heatmap shows:
+  A positive correlation between Temperature and O3. (This matches the findings in the exploration of data in Tableau).
+  A negative correlation between Temperature and CO. (This matches the findings in the exploration of data in Tableau).
+
+  Models can be improved by a larger data set, and fewer independent variables, modifying some parameters for example Test Size. 
 
 * Tableau: 
+Exploration done with, and without the additonal variable. Results are similar in both visualization sets.   
   * O3 has highest levels in the summer months.  Measures start climbing in April and start to decline in Sept.    
-  * CO  starts declining in March, climbs in September. Exception year 2013 and part of  2015  drop in March and re-peak in  June, decline and re-peak in   Sept. 2015 yr continues its decline after June and follows the overall trend after.                            
+
+  * CO  starts declining in March, climbs in September. Exception year 2013 and part of  2015  drop in March and re-peak in  June, decline and re-peak in   Sept. 2015 yr continues its decline after June and follows the overall trend after.        
+
   * Temperatures in the warmer months may be a contributing feature for increaseing the O3 measures in the warmer summer months. 
+  Linear Regression with single variable does show that as temperature increases, the ozone measure increases. 
 
 # Technical Details
 ## Data Selection / Background
@@ -93,6 +117,7 @@ Read and Loaded appropriate cleaned data file(s) in the various code files for p
 AWS S3 Bucket
 Decision Trees
 Google Colaboratory 
+Jupyter Notebook
 Keras
 Machine Learning
 Neural Networks
@@ -106,7 +131,7 @@ Tensor Flow
 Supervised Machine Learning Methods.
 
 #### Linear Regression Models performed with Single Feature, and Multiple Features.
-Single Feature Linear Regression Prediction Models:
+SINGLE Feature Linear Regression Prediction Models: [Code Notebook](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\LinearR_Single_Variable.ipynb)
 
 Data Exploration by performing Linear Regression Prediction Models with Single Features using 2 different cleansed datasets: 
 1. Without Zero or Null Values
@@ -115,17 +140,24 @@ Conclusion
 * Dataset 2 with the Zero values replaced with Median value of the respective column adds a lot of bias to the result.
 * Decided to proceed with using Dataset 1 with data_drop for the Project Analysi
 
-Sample of Data
+Data Sample:
 
 <img src="Images\LR_sample_data.PNG" alt="Sample of Data" width="600" height="350">
 
-Evaluation of the Linear Regression Models 
-* Linear Regression - Single Variable Temperature with Target Variable Ozone, reveals the Ozone rises with increase in temperatures. 
-* Linear Regression - Multiple Variables.  
-  * *  There is a positive correlation between pollutant variables carbon monoxide, nitrogen dioxide, suplhur dioxide, PM2.5, and PM10 on Ozone levels. 
-  * *  There is a negative correlation between weather variables Temperature, Pressure, Dewpoint, Rain, and Windspeed on Ozone.
-  
-<img src="Images\LR_Evaluations.PNG" alt="Assessing the Linear Regression Models" width="800" height="800">
+
+<img src="Images\LR_single_superposed_scatter_best_fit_line.PNG" alt="Linear Regression Single Variables Model" width="1000" height="600"> 
+
+MULTIPLE Features Linear Regression Prediction Models: [Code Notebook](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\LinearR_Multi_Variables.ipynb) 
+
+Model 1 with Target: O3
+
+<img src="Images\LR_Multi_Variables_Model1_O3.PNG" alt="Linear Regression Multi Target O3" width="800" height="700"> 
+
+
+
+Model 2 with Target: CO
+
+<img src="Images\LR_Multi_Variables_Model2_CO.PNG" alt="Linear Regression Multi Target CO" width="750" height="650"> 
 
 
 Relationships between features using pair plots visualized
