@@ -148,7 +148,13 @@ Coefficients array:  [ 1.57294634e-01  3.93318439e-02  2.84525105e-01 -7.9744202
 
 
 ### Neural Networks
+With Keras, sklearn, pandas, and tensor flow
+This model uses the O3 as the target variable (y) and the rest of the columns of interest in the dataset as the predictor (X). The data is scaled for better outcomes. The model uses layers with different values to train the model to predict the data from the target variable.
 
+The results of this model are not significant no matter the adjustments made to it. Therefore, this model fails to predict the O3 values for this dataset. Results:
+Loss =
+MSE = 
+MAE = ~56
 
 
 ## Tableau 
