@@ -4,18 +4,26 @@ Air Quality Predictions in Beijing, China
 Project Team: Alex Calametti, Brian Guenther, Gabriela Delgado, Naseema Omer 
 
 # Objectives: 
-Prediction models / Train algorithm(s) using Supervised Machine Learning to classify air quality feature(s) / measurements and predict the target variable for example Ozone (O3). 
-Build additional models to predict other Targets for eg. CO
+Explore, build different prediction models / Train algorithm(s) using Supervised Machine Learning to classify air quality feature(s) for a Target Variable. 
+
+Build additional models to predict other Targets. 
+
+Models built with Target variable O3, and CO. 
+
 
 # Summary /Next Steps / Recommendations
 
 # Technical Details
+## Data Selection / Background
+[Dataset Selected](https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data) from UCI (University of California, Irvine) Machine Learning Repository that allows sharing given appropriate credit. 
+
+This data set includes hourly air pollutants data from 12 nationally-controlled air-quality monitoring sites from the Beijing Municipal Environmental Monitoring Center which are matched with the nearest weather station from the China Meteorological Administration. 
+
+The time period: March 1st, 2013 to February 28th, 2017. 
+
 ## Extraction, Transformation, and Loading (ETL)
-
 ### Extraction
-[Dataset Selected](https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data)
-
-12 files downloaded, one for each station downloaded in .csv format. 
+12 files downloaded, one for each station downloaded in .csv format.  Raw_12_data_files.7z placed in the project Resources folder. 
 
 Data / Variables in data files:
 No: row number 
@@ -43,16 +51,22 @@ station: name of the air-quality monitoring site
 Data Cleansing: 
 Import into Panda Data Frames, concatenate the Pandas DataFrames, remove or impute Null rows (if between 5-10% of the total # or rows). May for example export as Parquet file, then use Spark. 
 
-Variables removed: station
-
+Variables removed: 'station' 
 Cleaned Data Files: Two cleaned.csv files placed in AWS S3Bucket:
-1. [Data drop S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_drop.csv)
+1. [Data_drop S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_drop.csv)
 
 2. [Data_med S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_med.csv)
 
+Variables removed:  'Station' and 'No' 
+3. [Data_     :](https://                 )
+
+Variables removed: 'No' 
+4. [Data_Tableau.7z is in Resources Folder](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\Resources\data_tableau.7z)
+
 ### Loading 
-Cleaned data files stored in AWS S3 Bucket
-Read and Loaded in the various code programs for predictions and analysis 
+Cleaned data 3 files stored in AWS S3 Bucket, and zipped files placed in project Resources folder.
+
+Read and Loaded appropriate cleaned data file(s) in the various code files for predictions and analysis 
 
 ## Programs 
 Python, Pandas 
@@ -60,7 +74,12 @@ Machine Learning
 Scikit-learn
 Spark 
 AWS S3 Bucket
-Prediction Models: Supervised Machine Learning: Linear Regression, Decision Trees, Neural Networks.  
+Tableau
+
+Prediction Models: 
+Supervised Machine Learning: 
+Linear Regression - Single Variable, Linear Regression - Multiple Variable,  Decision Trees, Neural Networks.
+Visualization and data analysis in Tableau.  
 
 ## Analysis
 ### Supervised Machine Learning Methods.
@@ -154,7 +173,9 @@ Coefficients array:  [ 1.57294634e-01  3.93318439e-02  2.84525105e-01 -7.9744202
 ## Tableau 
   [Beijing Air Quality Data Analysis on Tableau](https://public.tableau.com/views/BeijingAirQualityDataAnalysis/Story1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
-<img src="Images\TableauDashboard.PNG" alt="By Month and Date 2013-2017 for O3, and CO" width="800" height="400">
+  Explored data, and analysis including 12 Stations in Tableau.
+
+<img src="Images\TableauDashboard.PNG" alt="By Month and Date 2013-2017 for O3, and CO" width="800" height="500">
 
 
 # Acknowledgements: 
