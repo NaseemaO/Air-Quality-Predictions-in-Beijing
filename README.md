@@ -37,6 +37,8 @@ wd: wind direction
 WSPM: wind speed (m/s)
 station: name of the air-quality monitoring site
 
+1 PPM = 1,000 microgram per meter cubed. Similarly, 1 microgram per meter cubed = 0.001 PPM. To quickly convert from PPM to micrograms, multiply by 1,000
+
 ### Transformation 
 Data Cleansing: 
 Import into Panda Data Frames, concatenate the Pandas DataFrames, remove or impute Null rows (if between 5-10% of the total # or rows). May for example export as Parquet file, then use Spark. 
@@ -152,7 +154,7 @@ Coefficients array:  [ 1.57294634e-01  3.93318439e-02  2.84525105e-01 -7.9744202
 ## Tableau 
   [Beijing Air Quality Data Analysis on Tableau](https://public.tableau.com/views/BeijingAirQualityDataAnalysis/Story1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
-  image
+<img src="Images\TableauDashboard.PNG" alt="By Month and Date 2013-2017 for O3, and CO" width="800" height="400">
 
 
 # Acknowledgements: 
