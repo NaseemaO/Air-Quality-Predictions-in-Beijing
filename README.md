@@ -220,26 +220,26 @@ With Keras, sklearn, pandas, and tensor flow
 This model uses the O3 as the target variable (y) and the rest of the columns of interest in the dataset as the predictor (X). The data is scaled for better outcomes and autotune is used to optimize the model. The model uses layers with different values to train the model to predict the data from the target variable.
 
 Neural networks with O3 as the target variable (y) were explored both manually and via code for autotuning.  Manual adjustments to optimize the Neural Network solution included:
-Parsing the dataframe to a smaller sets of the data to predict O3 included but not limited to the following examples: 
-Just the chemicals PM2.5, PM10, SO2, NO2, CO
-Chemicals (PM2.5, PM10, SO2, NO2, CO) and temperature (due to the expected O3:temperature correlation)
-Just weather conditions (TEMP, PRES, DEWP, RAIN, WSPM)
-Just the chronological information (year, month, day, hour) – due to historical trends 
-chronological information plus temperature
-addition of Relative Humidity (RelHum) to our dataframes – due to expected O3:relative humidity correlation)
-month, hour, temperature, and relative humidity – focusing data on expected correlations
+•	Parsing the dataframe to a smaller sets of the data to predict O3 included but not limited to the following examples: 
+o	Just the chemicals PM2.5, PM10, SO2, NO2, CO
+o	Chemicals (PM2.5, PM10, SO2, NO2, CO) and temperature (due to the expected O3:temperature correlation)
+o	Just weather conditions (TEMP, PRES, DEWP, RAIN, WSPM)
+o	Just the chronological information (year, month, day, hour) – due to historical trends 
+o	chronological information plus temperature
+o	addition of Relative Humidity (RelHum) to our dataframes – due to expected O3:relative humidity correlation)
+o	month, hour, temperature, and relative humidity – focusing data on expected correlations
 
-One Hot Key encoding the month and hour columns to address when categorical variables are encoded as integers but where no such ordinal relationship exists.
-Varied number of layers from 1 to ???
-Varied number of neurons within layers from 1 to 8???
-Optimizer functions “adam” and “rmsprop” were tested
-Metrics test included:  mse (mean squared error), mae (mean absolute error), mape (mean absolute percentage error), and msle (mean squared logarithmic error).
-Epochs from 5 to 150
+•	One Hot Key encoding the month and hour columns to address when categorical variables are encoded as integers but where no such ordinal relationship exists.
+•	Varied number of layers from 1 to ???
+•	Varied number of neurons within layers from 1 to 8???
+•	Optimizer functions “adam” and “rmsprop” were tested
+•	Metrics test included:  mse (mean squared error), mae (mean absolute error), mape (mean absolute percentage error), and msle (mean squared logarithmic error).
+•	Epochs from 5 to 150
 
 For the autotuner script sought to optimize the Neural Network by testing with these parameters:
-Activation functions of relu, tanh, and sigmoid were
-1 to 10 neurons per layer
-1 to 5 hidden layers
+•	Activation functions of relu, tanh, and sigmoid were
+•	1 to 10 neurons per layer
+•	1 to 5 hidden layers
 
 Optimization of the results from the Neural Network model are not significant no matter the adjustments made to it, such as the number of layers and the nodes they contain, as well as the parameters for the model compilation. Therefore, this model fails to predict the O3 values for this dataset. Results were consistently in the following ranges:
 Loss = ~55
