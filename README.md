@@ -16,7 +16,7 @@ Created and performed Prediction Models using Supervised Machine Learning:
   * Linear Regression - Single Variable with plots: Scatter, Line, Superposed. 
   * Linear Regression - Multivariant with plots.  
   * Decision Trees - multiple Variables
-  * Neural Networks - 
+  * Neural Networks - multiple variables and parsing of the data, different neural nets, autotuning.
   * Tableau - visualization and data analysis for trends on original data to compare with prediction models. 
 
 See Technical Details below. 
@@ -25,7 +25,7 @@ See Technical Details below.
 # Analysis Summary
 
 * Linear Regression Models:
-  * Simple Model. As the temperature rises, the Ozone measures increase. 
+  * Linear Model. As the temperature rises, the Ozone measures increase. 
     * Slope of 2.96 with Temperature, and Target Ozone (O3). 
     * r2 value of 0.356525701 indicates 35% variability of the data; 65% of data is not represented. 
 
@@ -66,6 +66,11 @@ The Actual Trends in Tableau agree with the Prediction Model Trend.
   * Temperatures in the warmer months may be a contributing feature for increaseing the O3 measures in the warmer summer months. 
   Simple Linear Regression does show a positive correlation that as temperature rises, so do the Ozone measures. 
 
+* Neural Networks Model:
+
+* Decision Tree Models:
+
+
 # Technical Details
 ## Data Selection / Background
 [Dataset Selected](https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data) from UCI (University of California, Irvine) Machine Learning Repository that allows sharing given appropriate credit. 
@@ -97,7 +102,6 @@ RAIN: precipitation (mm)
 wd: wind direction
 WSPM: wind speed (m/s)
 station: name of the air-quality monitoring site
-
 
 ### Transformation 
 Data Cleansing: 
@@ -137,7 +141,7 @@ Spark
 Tableau
 Tensor Flow 
 
-## Models 
+## Models and Analysis
 Supervised Machine Learning Methods:
 
 ### Linear Regression performed with Simple and Multvariant Models.
