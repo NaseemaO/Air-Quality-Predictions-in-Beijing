@@ -69,7 +69,7 @@ The Actual Trends in Tableau agree with the Prediction Model Trend.
 * Neural Networks Model:
 
 * Decision Tree Models:
-
+  
 
 # Technical Details
 ## Data Selection / Background
@@ -107,7 +107,7 @@ Each of the initial csv files contain null values and were imported individually
 
 Cleaned Data Files: [Zipped cleaned data files](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\Resources)
 
-Temporarily placed first three .csv files placed in AWS S3Bucket. 
+Temporarily placed first three .csv files placed in AWS S3Bucket. Please Note: The S3 buckets will only be running temporarily, please use zipped csv files to import data. 
 
 1. [Data_drop S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_drop.csv)
 Variables removed: 'station'
@@ -212,7 +212,27 @@ The Predict Function results for both Dataset 1 and Dataset 2 are identical.
 
 ### Decision Trees
 
-A decision tree regressor was modeled to evaluate how well ozone (O3) can be predicted based on the other variables present in our dataset. This was done using the Sklearn library. The decision tree was run using various different variables but the model that garnered the best results predicted O3 values from the date (year, month, day, hour). The R^2 value was 0.82 which meets the project requirement of 0.80. Limitations of this model were the time series aspect of the data, as we did not have enough time in class to comduct time series analysis to further optimize the model. This can be a next step to build on what we have completed thus far. 
+A decision tree regressor was modeled to evaluate how well ozone (O3) can be predicted based on the other variables present in our dataset. This was done using the Sklearn library. These steps were taken to complete it: 
+
+* Dataset was read in using a Spark session to pull from an AWS S3 bucket
+* Unnecessary columns were droped from the Dataframe - photo shows the final code for columns used
+
+![Screen Shot 2023-12-12 at 5 08 05 PM](https://github.com/NaseemaO/Air-Quality-Predictions-in-Beijing/assets/136642574/a6680de9-ac70-47fc-9763-d138269d253d)
+
+ 
+* The data was split into features (X) and the target variable O3 (y)
+* Training and testing sets and standardized using the StandardScaler instance
+* A DecisionTreeRegressor model was then used to predict the (y) value
+* The r-squared value was calculated to determine the efficacy of the model
+
+The decision tree was run using various different variables but the model that garnered the best results predicted O3 values from the date (year, month, day, hour). The R-squared value was 0.87 which meets the project requirement of 0.80. A section of code has been included at the bottom of the code to demonstrate the numberous different data inputs attempted to optimize the model. 
+
+![Screen Shot 2023-12-11 at 9 13 00 PM](https://github.com/NaseemaO/Air-Quality-Predictions-in-Beijing/assets/136642574/5e6f47ce-3bc5-47b1-a137-86b18f2cde63)
+
+
+Due to time constraints we were not able to explore the prediction power of other compounds in the data set, which could be a next step to further investigate relationships present in this dataset. 
+
+
 
 ### Neural Networks
 With Keras, sklearn, pandas, and tensor flow
