@@ -153,15 +153,15 @@ Conclusion:
 
 Data Sample:
 
-<img src="Images\LR_sample_data.PNG" alt="Sample of Data" width="600" height="350">
+<img src="Images\LR_sample_data.PNG" alt="Sample of Data" width="500" height="300">
 
 Simple Linear Regression models performed: Linear Regression, Manual Prediction, and Prediction using Predict Function.  
 
-  * The key differences in results of Dataset1 and Dataset2 are the Intercept, Slope, r2, and Predicted Ozone metrics.  
+  * The key slight differences in results of Dataset1 and Dataset2 are the Intercept, Slope, r2, and Predicted Ozone metrics.  
 
   * The prediction results with the Predict Function are identical in both datasets. 
 
-  * The superposed scatter and best line fit plots are close. 
+  * The superposed scatter and best line fit plots are close. Image below shown for Dataset1.
 
   * Dataset1: Model's Formula y = 17.31191562019925 + 2.963656055355665X
     * The r2 is 0.3565257008834236
@@ -172,27 +172,26 @@ Simple Linear Regression models performed: Linear Regression, Manual Prediction,
     * Predicted Ozone (O3) metrics with data2 304.73
 
 
-<img src="Images\LR_simple_superposed_scatter_best_fit_line.PNG" alt="Linear Regression Single Variables Model" width="1000" height="600"> 
+<img src="Images\LR_simple_superposed_scatter_best_fit_line.PNG" alt="Linear Regression Single Variables Model" width="800" height="400"> 
 
 Dataset 2 with Null Values filled with Median Values
 
-<img src="Images\LR_simple_superposed_scatter_best_fit_line2.PNG" alt="Linear Regression Single Variables Model2" width="1000" height="600"> 
 
 The Predict Function results for both Dataset 1 and Dataset 2 are identical. 
 
-<img src="Images\LR_PredictFunction_O3.PNG" alt="LR Single Variable Model Predict Function" width="250" height="200"> 
+<img src="Images\LR_PredictFunction_O3.PNG" alt="LR Single Variable Model Predict Function" width="200" height="150"> 
 
 
 #### Multivariate Linear Regression Prediction Models: [Code Notebook](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\LinearR_Multi_Variables.ipynb) 
 
 * Model 1 with Target: O3
 
-<img src="Images\LR_Multivariant_Eval_Model1_O3.PNG" alt="Linear Regression Multi for O3" width="800" height="700"> 
+<img src="Images\LR_Multivariant_Eval_Model1_O3.PNG" alt="Linear Regression Multi for O3" width="600" height="500"> 
 
 
 * Model 2 with Target: CO
 
-<img src="Images\LR_Multivariant_Eval_Model2_CO.PNG" alt="Linear Regression Multi for CO" width="750" height="650"> 
+<img src="Images\LR_Multivariant_Eval_Model2_CO.PNG" alt="Linear Regression Multi for CO" width="600" height="500"> 
 
 
 * Relationships between features using pair plots visualized
@@ -204,7 +203,7 @@ The Predict Function results for both Dataset 1 and Dataset 2 are identical.
 * Visualized multicollinearity between independent features using a heatmap for Dependent Feature: O3
 
 
-<img src="Images\LR_Multi_Heatmap_PearsonCorrCoefMatrix.PNG" alt="Multicollinearity Between Independent Features" width="800" height="500">
+<img src="Images\LR_Multi_Heatmap_PearsonCorrCoefMatrix.PNG" alt="Multicollinearity Between Independent Features" width="600" height="400">
 
 
 
