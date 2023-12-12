@@ -69,7 +69,8 @@ The Actual Trends in Tableau agree with the Prediction Model Trend.
 * Neural Networks Model:
 
 * Decision Tree Models:
-  
+  Multiple variations of data inputs were attempted but the final model with the best r-sqaured value evaluated date columns (year, month, day, and hour) as a predictor of ozone (O3) concentrations.
+  * R-squared = 0.87 which indicates that 87% of the variability observed can be explained by the model. 
 
 # Technical Details
 ## Data Selection / Background
