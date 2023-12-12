@@ -183,6 +183,7 @@ A decision tree regressor was modeled to evaluate how well ozone (O3) can be pre
 
 ### Neural Networks
 With Keras, sklearn, pandas, and tensor flow
+
 This model uses the O3 as the target variable (y) and the rest of the columns of interest in the dataset as the predictor (X). The data is scaled for better outcomes and autotune is used to optimize the model. The model uses layers with different values to train the model to predict the data from the target variable.
 
 The results of this model are not significant no matter the adjustments made to it, such as the number of layers and the nodes they contain, as well as the parameters for the model compilation. Therefore, this model fails to predict the O3 values for this dataset. Results:
