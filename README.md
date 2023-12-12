@@ -75,15 +75,13 @@ The Actual Trends in Tableau agree with the Prediction Model Trend.
 ## Data Selection / Background
 [Dataset Selected](https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data) from UCI (University of California, Irvine) Machine Learning Repository that allows sharing given appropriate credit. 
 
-This data set includes hourly air pollutants data from 12 nationally-controlled air-quality monitoring sites from the Beijing Municipal Environmental Monitoring Center which are matched with the nearest weather station from the China Meteorological Administration. 
-
-The time period: March 1st, 2013 to February 28th, 2017. 
+This data set includes hourly air pollutants data from 12 nationally-controlled air-quality monitoring sites from the Beijing Municipal Environmental Monitoring Center which are matched with the nearest weather station from the China Meteorological Administration. The data covers the time period of: March 1st, 2013 to February 28th, 2017. 
 
 ## Extraction, Transformation, and Loading (ETL)
 ### Extraction
 12 files downloaded, one for each station downloaded in .csv format.  [Raw_12_data_files.7z placed in the project Resources folder](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\Resources). 
 
-Data / Variables in data files:
+Each file contains approximately 35,000 rows and the following column headings:
 No: row number 
 year: year of data in this row 
 month: month of data in this row 
@@ -105,7 +103,7 @@ station: name of the air-quality monitoring site
 
 ### Transformation 
 Data Cleansing: 
-Import into Panda Data Frames, concatenate the Pandas DataFrames, remove or impute Null rows (if between 5-10% of the total # or rows).  
+Each of the initial csv files contain null values and were imported individually into Panda Data Frames.  We sought to quantify how many nulls were present in order to determine whether it was reasonable to drop the rows with null values or if too much data would be lost (greater than 10% cutoff).  During this stage,  we were not certain how values differed between stations, so the approach to replacing null values was to repalce null values the median value for a given column for that specific station.  We identified that up to 15% of rows within a given station's data contained null values but the number of nulls varied between stations.  We realized that the decision of drop versus replacement of nulls needed to be made on the final combined dataframe.  So both approaches to dealing with nulls was carried out (drop versus replace) by looping through each individual csv file.  Since the files contained identical column headings, we were able to concatenate the files together.  This produced three dataframes:  data(all original data, including nulls, for comparison), data_med(where nulls were replaced with the median of its respective column for it’s particular station), and data_drop (where rows containing null values were dropped).  Both dataframes data and data_med contain 420768 rows and data_drop has 382168 rows, a 9.2% loss of data due to dropping nulls.  Both data_med and data_drop were placed in an AWS S3Bucket for group usage, with the intention to compare and contrast models success for the different approaches to dealing with nulls.  In order to create a cleaner file, the code was re-run with the inclusion of the "index=False" during writing out the csv file.  This removed the addition of a column for the indexing of the combined dataframe and produced the data_drop2.csv, also placed in an AWS S3Bucket.
 
 Cleaned Data Files: [Zipped cleaned data files](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\Resources)
 
