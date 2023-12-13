@@ -241,6 +241,10 @@ With Keras, sklearn, pandas, and tensor flow
 
 This model uses the O3 as the target variable (y) and the rest of the columns of interest in the dataset as the predictor (X). The data is scaled for better outcomes and autotune is used to optimize the model. The model uses layers with different values to train the model to predict the data from the target variable.
 
+The exploration of the different models was occurring in parallel with identifications in one system then tested in the others.  One example of this is the Correlation Coefficient Matrix from the multivarient regression; which identified a positive correlation between Temperature and Ozone as well as negative correlations between SO2, NO2, CO and Ozone.  These correlations are supported by visualization of chronological trends in Tableau.  This led to a search for other expected correlations for Ozone levels and identified a negative correlation between Ozone and Relative Humidity.  The formula for Relative Humity is based on Temperature and DewPoint, which is available in our dataframe.  Code for relative humidity was added to optimization models.
+![image](https://github.com/NaseemaO/Air-Quality-Predictions-in-Beijing/assets/137229474/97bd2df2-df6b-4717-a4d7-76842ca99750)
+Unexpectedly, addition of relative humidity to models did not result in improved predictions.
+
 Neural networks with O3 as the target variable (y) were explored both manually and via code for autotuning.  Manual adjustments to optimize the Neural Network solution included:
 •	Parsing the dataframe to a smaller sets of the data to predict O3 included but not limited to the following examples: 
 o	Just the chemicals PM2.5, PM10, SO2, NO2, CO
@@ -262,6 +266,9 @@ For the autotuner script sought to optimize the Neural Network by testing with t
 •	Activation functions of relu, tanh, and sigmoid were
 •	1 to 10 neurons per layer
 •	1 to 5 hidden layers
+
+Examples of the Neural Network notebooks are provided in the GitHub titled:
+dropNNadamdatedata.ipynb, dropNNadamdatedataRHumidity.ipynb, and dropNNadamdatedataRelaHumonehot.ipynb
 
 Optimization of the results from the Neural Network model are not significant no matter the adjustments made to it, such as the number of layers and the nodes they contain, as well as the parameters for the model compilation. Therefore, this model fails to predict the O3 values for this dataset. Results were consistently in the following ranges:
 Loss = ~55
