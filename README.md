@@ -276,9 +276,11 @@ MSE = ~6500
 MAE = ~56
 
 ![NN_MSE_MAEGraph](https://github.com/NaseemaO/Air-Quality-Predictions-in-Beijing/assets/55549752/29e9285d-9b94-4ac5-b3f3-05bb1e87a8b3)
+
 This graph shows how the values did not improve as more epochs were produced, demonstrating how the model was unable to predict the target value.
 
 ![NNLossGraph](https://github.com/NaseemaO/Air-Quality-Predictions-in-Beijing/assets/55549752/5c8e57de-ad40-4f03-83e6-1296f827b8a6)
+
 This graph shows the high loss of the model as it was being trained.
 
 
