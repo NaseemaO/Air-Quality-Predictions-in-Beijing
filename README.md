@@ -289,8 +289,8 @@ MAE = ~56
 
 
 # Next Steps / Recommendations
-* Models may be improved by obtaining more data, selecting a larger data set, including fewer independent variables, or modifying some parameters for example Test Size.
-* Trying out additinal different models and selecting the better / best models. 
+* Models may be improved by obtaining more data (for example, by adding more recent data since February 2017 from Beijing), selecting a larger data set, including fewer independent variables, or modifying some parameters for example Test Size.
+* Trying out additional different models and selecting the better / best models. 
 
 # Acknowledgements: 
 Instructor: Hunter Hollis, TAs: Sam Espe and Randy Sendek, and Tutors for their guidance on this project.
