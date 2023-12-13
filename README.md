@@ -14,7 +14,7 @@ Models built with Target variable O3, and CO.
 
 Created and performed Prediction Models using Supervised Machine Learning: 
   * Linear Regression - Single Variable with plots: Scatter, Line, Superposed. 
-  * Linear Regression - Multivariant with plots.  
+  * Linear Regression - Multivariable with plots.  
   * Decision Trees - Multiple Variables.
   * Neural Networks - Multiple variables and parsing of the data, different neural nets, autotuning.
   * Tableau - Visualization and data analysis for trends on original data to compare with prediction models. 
@@ -31,37 +31,37 @@ Presentation Slides: pdf file located in directory.
     * Slope of 2.96 with Temperature, and Target O3. 
     * r2 value of 0.356525701 indicates 35% variability of the data; 65% of data is not represented. 
 
-  * Multivariant Model. Target Ozone (O3) measure predictions with multiple variables: 
-    * There is a positive correlation between pollutant variables carbon monoxide (CO), nitrogen dioxide (NO2), sulphur dioxide (SO2), PM2.5, and PM10 and Ozone (O3). 
+  * Multivariable Model. Target Ozone (O3) measure predictions with multiple variables: 
+    * There is a positive correlation between pollutant variables carbon monoxide (CO), nitrogen dioxide (NO2), sulfur dioxide (SO2), PM2.5, and PM10 and Ozone (O3). 
     * The r2 is 0.5724457157382516 indicates 57% variability of the data. 
 
-  * Multivariant Model. Target Carbon Monoxide (CO) measure predictions with multiple variables:
-    * There is a positive correlation between pollutant variables ozone, nitrogen dioxide, suplhur dioxide, PM2.5, and PM10 and CO.
+  * Multivariable Model. Target Carbon Monoxide (CO) measure predictions with multiple variables:
+    * There is a positive correlation between pollutant variables ozone, nitrogen dioxide, sulfur dioxide, PM2.5, and PM10 and CO.
     * The r2 is 0.723158568713435 indicates 72% variability of the data. 
     The Model is fair as the preferred r2 value is >= 0.80. 
 
   * Using Pair Plots to visualize Feature Relationships, it appears that there is:
     * The weather condition variables Temperature, Pressure, Dewpoint, Rain, and Windspeed do not appear to have a significant impact on either O3, or CO. 
-    * There is a some correlation between Temperature and both the O3, and CO.
+    * There is some correlation between Temperature and both the O3, and CO.
     * The O3 increases with temperature increase. 
     * The CO decreases with temperature increase. 
-    The results match the findings in the Simple and Multivariant Linear Regression Models, and from the exploration of data in Tableau.
+    The results match the findings in the Simple and Multivariable Linear Regression Models, and from the exploration of data in Tableau.
 
   * Visualizing Multicollinearity with Pearson Correlation Coefficient Matrix between All Features (as Independent Features) and Heatmap shows:
     * A positive correlation between Temperature and O3. 
     * A negative correlation between Temperature and CO. 
-    The results match the findings in the Simple and Multivariant Linear Regression Models, and from the exploration of data in Tableau.
+    The results match the findings in the Simple and Multivariable Linear Regression Models, and from the exploration of data in Tableau.
     * O3 and CO present a weak correlation with pollutants in the air quality.
 
 * Tableau: 
-Exploration performed with, and without the additonal variable 'Station'. Results are similar in both visualization sets. 
+Exploration performed with, and without the additional variable 'Station'. Results are similar in both visualization sets. 
 The Actual Trends in Tableau agree with the Prediction Model Trend.  
 
-  * O3 has highest levels in the summer months.
+  * O3 has the highest levels in the summer months.
   * Measures start climbing in April and start to decline in Sept.
 
-  * CO  starts declining in March, climbs in September. 
-    * Exception: Year 2013 and part of  2015 drops in March, re-peaks in June, declines and re-peaks in September.
+  * CO starts declining in March, climbs in September. 
+    * Exception: Year 2013 and part of 2015 drops in March, re-peaks in June, declines and re-peaks in September.
     * Year 2015 continues its decline after June and follows the overall trend after.
 
   * Temperatures in the warmer months may be a contributing feature for increasing the O3 measures in the warmer summer months. 
@@ -71,14 +71,14 @@ The Actual Trends in Tableau agree with the Prediction Model Trend.
  Neural Networks models consistently starting with a Mean Absolute Error (MAE) value around 56 and failed to optimize/learn during training.  Optimization attempts included: parsing of data, addition of relative humidity, one hot encoding of chronological information, varying optimizer functions, metrics, number of epochs, number of layers and nodes, and an autotuning search. Given the MAE value and failure to learn, the neural network models fail to predict the O3 values for this dataset. 
  
 * Decision Tree Models:
-  Multiple variations of data inputs were attempted but the final model with the best r-sqaured value evaluated date columns (year, month, day, and hour) as a predictor of ozone (O3) concentrations.
+  Multiple variations of data inputs were attempted but the final model with the best r-squared value evaluated date columns (year, month, day, and hour) as a predictor of ozone (O3) concentrations.
   * R-squared = 0.87 which indicates that 87% of the variability observed can be explained by the model. 
 
 # Technical Details
 ## Data Selection / Background
 [Dataset Selected](https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data) from UCI (University of California, Irvine) Machine Learning Repository that allows sharing given appropriate credit. 
 
-This data set includes hourly air pollutants data from 12 nationally-controlled air-quality monitoring sites from the Beijing Municipal Environmental Monitoring Center which are matched with the nearest weather station from the China Meteorological Administration. The data covers the time period of: March 1st, 2013 to February 28th, 2017. 
+This data set includes hourly air pollutants data from 12 nationally controlled air-quality monitoring sites from the Beijing Municipal Environmental Monitoring Center which are matched with the nearest weather station from the China Meteorological Administration. The data covers the time period of: March 1st, 2013 to February 28th, 2017. 
 
 ## Extraction, Transformation, and Loading (ETL)
 ### Extraction
@@ -106,23 +106,23 @@ station: name of the air-quality monitoring site
 
 ### Transformation 
 Data Cleansing: 
-Each of the initial csv files contain null values and were imported individually into Panda Data Frames.  We sought to quantify how many nulls were present in order to determine whether it was reasonable to drop the rows with null values or if too much data would be lost (greater than 10% cutoff).  During this stage,  we were not certain how values differed between stations, so the approach to replacing null values was to repalce null values the median value for a given column for that specific station.  We identified that up to 15% of rows within a given station's data contained null values but the number of nulls varied between stations.  We realized that the decision of drop versus replacement of nulls needed to be made on the final combined dataframe.  So both approaches to dealing with nulls was carried out (drop versus replace) by looping through each individual csv file.  Since the files contained identical column headings, we were able to concatenate the files together.  This produced three dataframes:  data(all original data, including nulls, for comparison), data_med(where nulls were replaced with the median of its respective column for it’s particular station), and data_drop (where rows containing null values were dropped).  Both dataframes data and data_med contain 420768 rows and data_drop has 382168 rows, a 9.2% loss of data due to dropping nulls.  Both data_med and data_drop were placed in an AWS S3Bucket for group usage, with the intention to compare and contrast models success for the different approaches to dealing with nulls.  In order to create a cleaner file, the code was re-run with the inclusion of the "index=False" during writing out the csv file.  This removed the addition of a column for the indexing of the combined dataframe and produced the data_drop2.csv, also placed in an AWS S3Bucket.
+Each of the initial csv files contain null values and were imported individually into Panda Data Frames.  We sought to quantify how many nulls were present in order to determine whether it was reasonable to drop the rows with null values or if too much data would be lost (greater than 10% cutoff).  During this stage,  we were not certain how values differed between stations, so the approach to replacing null values was to replace null values the median value for a given column for that specific station.  We identified that up to 15% of rows within a given station's data contained null values but the number of nulls varied between stations.  We realized that the decision of drop versus replacement of nulls needed to be made on the final combined dataframe.  So both approaches to dealing with nulls was carried out (drop versus replace) by looping through each individual csv file.  Since the files contained identical column headings, we were able to concatenate the files together.  This produced three dataframes:  data(all original data, including nulls, for comparison), data_med(where nulls were replaced with the median of its respective column for it’s particular station), and data_drop (where rows containing null values were dropped).  Both dataframes data and data_med contain 420768 rows and data_drop has 382168 rows, a 9.2% loss of data due to dropping nulls.  Both data_med and data_drop were placed in an AWS S3Bucket for group usage, with the intention to compare and contrast models success for the different approaches to dealing with nulls.  In order to create a cleaner file, the code was re-run with the inclusion of the "index=False" during writing out the csv file.  This removed the addition of a column for the indexing of the combined dataframe and produced the data_drop2.csv, also placed in an AWS S3Bucket.
 
 Cleaned Data Files: [Zipped cleaned data files](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\Resources)
 
-Temporarily placed first three .csv files placed in AWS S3Bucket. Please Note: The S3 buckets will only be running temporarily, please use zipped csv files to import data. 
+Temporarily placed the first three .csv files in AWS S3Bucket. Please Note: The S3 buckets will only be running temporarily, please use zipped csv files to import data. 
 
 1. [Data_drop S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_drop.csv)
-Variables removed: 'NAN' and 'station'
+Variables removed: 'NAN' and 'station'.
 
 2. [Data_med S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_med.csv)
-Variables removed: 'NAN' and  'station'
+Variables removed: 'NAN' and 'station'.
 
 3. [Data_drop2 S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_drop2.csv)
-Variables removed: 'NAN', 'Station' and 'No' 
+Variables removed: 'NAN', 'Station' and 'No'. 
 
 4. [Data_Tableau.7z is in Resources Folder](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\Resources\data_tableau.7z)
-Variables removed: NAN' and No'
+Variables removed: 'NAN' and 'No'.
 
 ### Loading 
 Read and Loaded appropriate cleaned data file(s) in the various code files for predictions and analysis 
@@ -145,7 +145,7 @@ Tensor Flow
 ## Models and Analysis
 Supervised Machine Learning Methods:
 
-### Linear Regression performed with Simple and Multvariant Models.
+### Linear Regression performed with Simple and Multivariable Models.
 #### Simple Linear Regression Prediction Models: [Code Notebook](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\LinearR_Single_Variable.ipynb)
 
 Data Exploration by performing Linear Regression Prediction Models with Single Features using 2 different cleansed datasets: 
@@ -185,16 +185,16 @@ Simple Linear Regression models performed: Linear Regression, Manual Prediction,
 <img src="Images\LR_PredictFunction_O3.PNG" alt="LR Single Variable Model Predict Function" width="200" height="150"> 
 
 
-#### Multivariate Linear Regression Prediction Models: [Code Notebook](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\LinearR_Multi_Variables.ipynb) 
+#### Multivariable Linear Regression Prediction Models: [Code Notebook](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\LinearR_Multi_Variables.ipynb) 
 
 * Model 1 with Target: O3
 
-<img src="Images\LR_Multivariant_Eval_Model1_O3.PNG" alt="Linear Regression Multi for O3" width="600" height="500"> 
+<img src="Images\LR_Multivariable_Eval_Model1_O3.PNG" alt="Linear Regression Multi for O3" width="600" height="500"> 
 
 
 * Model 2 with Target: CO
 
-<img src="Images\LR_Multivariant_Eval_Model2_CO.PNG" alt="Linear Regression Multi for CO" width="600" height="500"> 
+<img src="Images\LR_Multivariable_Eval_Model2_CO.PNG" alt="Linear Regression Multi for CO" width="600" height="500"> 
 
 
 * Relationships between features using pair plots visualized
@@ -216,7 +216,7 @@ Simple Linear Regression models performed: Linear Regression, Manual Prediction,
 A decision tree regressor was modeled to evaluate how well ozone (O3) can be predicted based on the other variables present in our dataset. This was done using the Sklearn library. These steps were taken to complete it: 
 
 * Dataset was read in using a Spark session to pull from an AWS S3 bucket
-* Unnecessary columns were droped from the Dataframe - photo shows the final code for columns used
+* Unnecessary columns were dropped from the Dataframe - photo shows the final code for columns used
 
 ![Screen Shot 2023-12-12 at 5 08 05 PM](https://github.com/NaseemaO/Air-Quality-Predictions-in-Beijing/assets/136642574/a6680de9-ac70-47fc-9763-d138269d253d)
 
@@ -240,7 +240,7 @@ With Keras, sklearn, pandas, and tensor flow
 
 This model uses the O3 as the target variable (y) and the rest of the columns of interest in the dataset as the predictor (X). The data is scaled for better outcomes and autotune is used to optimize the model. The model uses layers with different values to train the model to predict the data from the target variable.
 
-The exploration of the different models was occurring in parallel with identifications in one system then tested in the others.  One example of this is the Correlation Coefficient Matrix from the multivarient regression; which identified a positive correlation between Temperature and Ozone as well as negative correlations between SO2, NO2, CO and Ozone.  These correlations are supported by visualization of chronological trends in Tableau.  This led to a search for other expected correlations for Ozone levels and identified a negative correlation between Ozone and Relative Humidity.  The formula for Relative Humity is based on Temperature and DewPoint, which is available in our dataframe.  Code for relative humidity was added to optimization models.
+The exploration of the different models was occurring in parallel with identifications in one system then tested in the others.  One example of this is the Correlation Coefficient Matrix from the multivariable regression; which identified a positive correlation between Temperature and Ozone as well as negative correlations between SO2, NO2, CO and Ozone.  These correlations are supported by visualization of chronological trends in Tableau.  This led to a search for other expected correlations for Ozone levels and identified a negative correlation between Ozone and Relative Humidity.  The formula for Relative Humity is based on Temperature and DewPoint, which is available in our dataframe.  Code for relative humidity was added to optimization models.
 ![image](https://github.com/NaseemaO/Air-Quality-Predictions-in-Beijing/assets/137229474/97bd2df2-df6b-4717-a4d7-76842ca99750)
 Unexpectedly, addition of relative humidity to models did not result in improved predictions.
 
@@ -286,23 +286,23 @@ This graph shows the high loss of the model as it was being trained.
 ## Tableau 
   [Beijing Air Quality Data Analysis on Tableau](https://public.tableau.com/app/profile/naseema.omer/viz/BeijingAirQualityDataAnalysis/BeijingAirQualityDataAnalysis)
 
-  Explored data, and analysis on actual data in Tableau to visualize trends. The prediction trends are in agreement with the trends seen in Tableau. 
+  Explored data, and analysis on actual data in Tableau to visualize trends. The predicted trends agree with the trends seen in Tableau. 
 
 <img src="Images\TableauDashboard.PNG" alt="By Month and Date 2013-2017 for O3, and CO" width="800" height="500">
 
-* O3 levels are higher in the summer months.  Temperature is higher in the summer months. 
+* O3 levels are higher in the summer months.  The temperature is higher in the summer months. 
 
-* CO levels seem to be lower in the summer months in comparison to the colder weathered months. Temperature is lower in the winter months. 
+* CO levels seem to be lower in the summer months in comparison to the colder weathered months. The temperature is lower in the winter months. 
 
 
 # Next Steps / Recommendations
 * Models may be improved by obtaining
-  * more data (for example, by adding more recent data since February 2017 from Beijing), 
-  * selecting a larger data set, 
-  * including fewer independent variables, 
-  * modifying some parameters for example Test Size,
-  * exploring prediction values for other pollutant compounds,
-  * performing seasonal time series analysis.
+  * More data (for example, by adding more recent data since February 2017 from Beijing), 
+  * Selecting a larger data set, 
+  * Including fewer independent variables, 
+  * Modifying some parameters for example Test Size,
+  * Exploring prediction values for other pollutant compounds,
+  * Performing seasonal time series analysis.
 * Trying additional different models and selecting the better / best models. 
 
 # Acknowledgements: 
