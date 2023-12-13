@@ -24,6 +24,8 @@ See Technical Details below.
 
 # Analysis Summary
 
+[Presentation Slides](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\project_4_grou_6_presentation.pdf)
+
 * Linear Regression Models:
   * Simple Model. As the temperature rises, the Ozone (O3) measures increase. 
     * Slope of 2.96 with Temperature, and Target O3. 
