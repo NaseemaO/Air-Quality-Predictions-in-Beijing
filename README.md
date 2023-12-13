@@ -67,7 +67,8 @@ The Actual Trends in Tableau agree with the Prediction Model Trend.
   Simple Linear Regression does show a positive correlation that as temperature rises, so do the Ozone measures. 
 
 * Neural Networks Model:
-
+ Neural Networks models consistently starting with a Mean Absolute Error (MAE) value around 56 and failed to optimize/learn during training.  Optimization attempts included: parsing of data, addition of relative humidity, one hot encoding of chronological information, varying optimizer functions, metrics, number of epochs, number of layers and nodes, and an autotuning search. Given the MAE value and failure to learn, the neural network models fail to predict the O3 values for this dataset. 
+ 
 * Decision Tree Models:
   Multiple variations of data inputs were attempted but the final model with the best r-sqaured value evaluated date columns (year, month, day, and hour) as a predictor of ozone (O3) concentrations.
   * R-squared = 0.87 which indicates that 87% of the variability observed can be explained by the model. 
