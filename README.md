@@ -15,9 +15,9 @@ Models built with Target variable O3, and CO.
 Created and performed Prediction Models using Supervised Machine Learning: 
   * Linear Regression - Single Variable with plots: Scatter, Line, Superposed. 
   * Linear Regression - Multivariant with plots.  
-  * Decision Trees - multiple Variables
-  * Neural Networks - multiple variables and parsing of the data, different neural nets, autotuning.
-  * Tableau - visualization and data analysis for trends on original data to compare with prediction models. 
+  * Decision Trees - Multiple Variables.
+  * Neural Networks - Multiple variables and parsing of the data, different neural nets, autotuning.
+  * Tableau - Visualization and data analysis for trends on original data to compare with prediction models. 
 
 See Technical Details below. 
 
@@ -25,18 +25,18 @@ See Technical Details below.
 # Analysis Summary
 
 * Linear Regression Models:
-  * Linear Model. As the temperature rises, the Ozone measures increase. 
-    * Slope of 2.96 with Temperature, and Target Ozone (O3). 
+  * Simple Model. As the temperature rises, the Ozone (O3) measures increase. 
+    * Slope of 2.96 with Temperature, and Target O3. 
     * r2 value of 0.356525701 indicates 35% variability of the data; 65% of data is not represented. 
 
   * Multivariant Model. Target Ozone (O3) measure predictions with multiple variables: 
-    * There is a positive correlation between pollutant variables carbon monoxide (CO), nitrogen dioxide (NO2), suplhur dioxide (SO2), PM2.5, and PM10 and Ozone (O3). 
+    * There is a positive correlation between pollutant variables carbon monoxide (CO), nitrogen dioxide (NO2), sulphur dioxide (SO2), PM2.5, and PM10 and Ozone (O3). 
     * The r2 is 0.5724457157382516 indicates 57% variability of the data. 
 
   * Multivariant Model. Target Carbon Monoxide (CO) measure predictions with multiple variables:
     * There is a positive correlation between pollutant variables ozone, nitrogen dioxide, suplhur dioxide, PM2.5, and PM10 and CO.
     * The r2 is 0.723158568713435 indicates 72% variability of the data. 
-    The Model is good. 
+    The Model is fair as the preferred r2 value is >= 0.80. 
 
   * Using Pair Plots to visualize Feature Relationships, it appears that there is:
     * The weather condition variables Temperature, Pressure, Dewpoint, Rain, and Windspeed do not appear to have a significant impact on either O3, or CO. 
@@ -49,8 +49,7 @@ See Technical Details below.
     * A positive correlation between Temperature and O3. 
     * A negative correlation between Temperature and CO. 
     The results match the findings in the Simple and Multivariant Linear Regression Models, and from the exploration of data in Tableau.
-
-  Models may be improved by getting more data, selecting a larger data set, fewer independent variables, or modifying some parameters for example Test Size.
+    * O3 and CO present a weak correlation with pollutants in the air quality.
 
 * Tableau: 
 Exploration performed with, and without the additonal variable 'Station'. Results are similar in both visualization sets. 
@@ -63,8 +62,8 @@ The Actual Trends in Tableau agree with the Prediction Model Trend.
     * Exception: Year 2013 and part of  2015 drops in March, re-peaks in June, declines and re-peaks in September.
     * Year 2015 continues its decline after June and follows the overall trend after.
 
-  * Temperatures in the warmer months may be a contributing feature for increaseing the O3 measures in the warmer summer months. 
-  Simple Linear Regression does show a positive correlation that as temperature rises, so do the Ozone measures. 
+  * Temperatures in the warmer months may be a contributing feature for increasing the O3 measures in the warmer summer months. 
+  Simple Linear Regression does show a positive correlation that as temperature rises, so do the O3 measures. 
 
 * Neural Networks Model:
  Neural Networks models consistently starting with a Mean Absolute Error (MAE) value around 56 and failed to optimize/learn during training.  Optimization attempts included: parsing of data, addition of relative humidity, one hot encoding of chronological information, varying optimizer functions, metrics, number of epochs, number of layers and nodes, and an autotuning search. Given the MAE value and failure to learn, the neural network models fail to predict the O3 values for this dataset. 
@@ -112,16 +111,16 @@ Cleaned Data Files: [Zipped cleaned data files](https://github.com/NaseemaO/Air_
 Temporarily placed first three .csv files placed in AWS S3Bucket. Please Note: The S3 buckets will only be running temporarily, please use zipped csv files to import data. 
 
 1. [Data_drop S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_drop.csv)
-Variables removed: 'station'
+Variables removed: 'NAN' and 'station'
 
 2. [Data_med S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_med.csv)
-Variables removed: 'station'
+Variables removed: 'NAN' and  'station'
 
 3. [Data_drop2 S3 bucket:](https://project-4-group-6-air-quality.s3.us-east-2.amazonaws.com/data_drop2.csv)
-Variables removed:  'Station' and 'No' 
+Variables removed: 'NAN', 'Station' and 'No' 
 
 4. [Data_Tableau.7z is in Resources Folder](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\Resources\data_tableau.7z)
-Variables removed: 'No'
+Variables removed: NAN' and No'
 
 ### Loading 
 Read and Loaded appropriate cleaned data file(s) in the various code files for predictions and analysis 
@@ -148,12 +147,12 @@ Supervised Machine Learning Methods:
 #### Simple Linear Regression Prediction Models: [Code Notebook](https://github.com/NaseemaO/Air_Quality_Predictions_in_Beijing.git\tree\main\LinearR_Single_Variable.ipynb)
 
 Data Exploration by performing Linear Regression Prediction Models with Single Features using 2 different cleansed datasets: 
-1. Null values dropped
-2. Null values filled with the Median Values of their respective columns
+1. NAN values dropped
+2. NAN values filled with the Median Values of their respective columns
 
 Conclusion: 
-* Dataset 2 with the Null values filled with Median values may add more bias to results.
-* Decided to proceed the remainder of the project using Dataset 1 (data_drop.csv, and data_drop2.csv) for the remainder of the Project.
+* Dataset 2 with the NAN values filled with Median values may add more bias to results.
+* Decided to proceed with the remainder of the project using Dataset 1 (data_drop.csv, and data_drop2.csv) for the remainder of the Project.
 
 Data Sample:
 
@@ -161,7 +160,7 @@ Data Sample:
 
 Simple Linear Regression models performed: Linear Regression, Manual Prediction, and Prediction using Predict Function.  
 
-  * The key slight differences in results of Dataset1 and Dataset2 are the Intercept, Slope, r2, and Predicted Ozone metrics.  
+  * The key slight differences in results of Dataset1 and Dataset2 are the Intercept, Slope, r2, and Predicted O3 metrics.  
 
   * The prediction results with the Predict Function are identical in both datasets. 
 
@@ -169,19 +168,17 @@ Simple Linear Regression models performed: Linear Regression, Manual Prediction,
 
   * Dataset1: Model's Formula y = 17.31191562019925 + 2.963656055355665X
     * The r2 is 0.3565257008834236
-    * Predicted Ozone (O3) metrics with Dataset1 313.68
+    * Predicted O3 metrics with Dataset1 313.68
 
   * Dataset2: Model's formula: y = 18.118847608324636 + 2.866120914930229X
     * The r2 is 0.34434693063035227.
-    * Predicted Ozone (O3) metrics with data2 304.73
+    * Predicted O3 metrics with data2 304.73
 
 
 <img src="Images\LR_simple_superposed_scatter_best_fit_line.PNG" alt="Linear Regression Single Variables Model" width="800" height="400"> 
 
-Dataset 2 with Null Values filled with Median Values
 
 
-The Predict Function results for both Dataset 1 and Dataset 2 are identical. 
 
 <img src="Images\LR_PredictFunction_O3.PNG" alt="LR Single Variable Model Predict Function" width="200" height="150"> 
 
@@ -250,9 +247,9 @@ Neural networks with O3 as the target variable (y) were explored both manually a
 o	Just the chemicals PM2.5, PM10, SO2, NO2, CO
 o	Chemicals (PM2.5, PM10, SO2, NO2, CO) and temperature (due to the expected O3:temperature correlation)
 o	Just weather conditions (TEMP, PRES, DEWP, RAIN, WSPM)
-o	Just the chronological information (year, month, day, hour) – due to historical trends 
+o	Just the chronological information (year, month, day, hour) – (due to historical trends) 
 o	chronological information plus temperature
-o	addition of Relative Humidity (RelHum) to our dataframes – due to expected O3:relative humidity correlation)
+o	addition of Relative Humidity (RelHum) to our dataframes – (due to expected O3:relative humidity correlation)
 o	month, hour, temperature, and relative humidity – focusing data on expected correlations
 
 •	One Hot Key encoding the month and hour columns to address when categorical variables are encoded as integers but where no such ordinal relationship exists.
@@ -293,12 +290,18 @@ This graph shows the high loss of the model as it was being trained.
 
 * O3 levels are higher in the summer months.  Temperature is higher in the summer months. 
 
-* CO levels seem to be lower in the summer months in comparison to the colder weathered months. 
+* CO levels seem to be lower in the summer months in comparison to the colder weathered months. Temperature is lower in the winter months. 
 
 
 # Next Steps / Recommendations
-* Models may be improved by obtaining more data (for example, by adding more recent data since February 2017 from Beijing), selecting a larger data set, including fewer independent variables, or modifying some parameters for example Test Size.
-* Trying out additional different models and selecting the better / best models. 
+* Models may be improved by obtaining:
+  * more data (for example, by adding more recent data since February 2017 from Beijing), 
+  * selecting a larger data set, 
+  * including fewer independent variables, 
+  * modifying some parameters for example Test Size,
+  * exploring prediction values for other pollutant compounds,
+  * performing seasonal time series analysis.
+* Trying additional different models and selecting the better / best models. 
 
 # Acknowledgements: 
 Instructor: Hunter Hollis, TAs: Sam Espe and Randy Sendek, and Tutors for their guidance on this project.
