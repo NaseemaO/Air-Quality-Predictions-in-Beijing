@@ -24,7 +24,7 @@ See Technical Details below.
 
 # Analysis Summary
 
-Presentation Slides pdf file located in directory.
+Presentation Slides: pdf file located in directory.
 
 * Linear Regression Models:
   * Simple Model. As the temperature rises, the Ozone (O3) measures increase. 
@@ -296,7 +296,7 @@ This graph shows the high loss of the model as it was being trained.
 
 
 # Next Steps / Recommendations
-* Models may be improved by obtaining:
+* Models may be improved by obtaining
   * more data (for example, by adding more recent data since February 2017 from Beijing), 
   * selecting a larger data set, 
   * including fewer independent variables, 
