@@ -130,27 +130,16 @@ Read and Loaded appropriate cleaned data file(s) in the various code files for p
 ## Programs / Packages
     AWS S3 Bucket
     Decision Trees
-    
     Google Colaboratory 
-    
     Jupyter Notebook
-    
     Keras
-    
     Linear Regression
-    
     Machine Learning
-    
     Neural Networks
-    
     Python, Pandas 
-    
     Scikit-learn
-    
     Spark 
-    
     Tableau
-    
     Tensor Flow 
 
 ## Models and Analysis
